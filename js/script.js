@@ -4,6 +4,13 @@ var creaButton = document.getElementById("creaBiglietto")
 var costoTotale;
 var costoKm = 0.21;
 
+// dati dei num.treno e Carrozza
+var minCarrozza = 1;
+var maxCarrozza = 10;
+var minNumTreno = 90000;
+var maxNumTreno = 100000;
+
+// parte del bottone
 creaButton.addEventListener("click", function(){
   var nome = document.getElementById("nome").value;
   var km = document.getElementById("km").value;
@@ -22,8 +29,15 @@ creaButton.addEventListener("click", function(){
     costoTotale = km * costoKm;
   }
 
-  var numeroTreno = Math.floor(Math.random()*( ))
+  var numeroTreno = Math.floor(Math.random() * (maxNumTreno - minNumTreno +1 )) + minNumTreno;
+  var carrozza = Math.floor(Math.random() * (maxCarrozza - minCarrozza +1 )) +minCarrozza;
+
+  document.getElementById("passeggero").innerHTML = nome;
+  document.getElementById("numeroTreno").innerHTML = numeroTreno;
+  document.getElementById("carrozza").innerHTML = carrozza;
+  document.getElementById("prezzoBiglietto").innerHTML = costoTotale;
+  document.getElementById("categoriaEta").innerHTML = categoria;
 
 
-  console.log(costoTotale);
+
 })
